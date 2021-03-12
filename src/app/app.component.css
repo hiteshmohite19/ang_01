@@ -1,0 +1,8 @@
+#sidebar{
+    height: auto !important;
+    margin: 0 auto -142px;
+    min-height: 100%;
+}
+.flex-fill {
+    flex:1 1 auto;
+  }
