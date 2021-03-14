@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { UsersComponent } from './users/users.component';
+import { HomePageComponent } from './main-page/home-page/home-page.component';
+import { UsersComponent } from './sidenav-links/users/users.component';
 
 const routes: Routes = [
-  {path:'',component:AppComponent},
-  {path:'users',component:UsersComponent},
+  {path:'',component:HomePageComponent,},
+  {path:'users',component:UsersComponent}, 
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [
+    RouterModule,
+  ]
 })
 export class AppRoutingModule { }
-export const routingComponent=[UsersComponent,AppComponent]
+export const routingComponent=[UsersComponent]
