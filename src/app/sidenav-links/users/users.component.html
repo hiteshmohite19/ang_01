@@ -1,25 +1,36 @@
-
 <div class="container mt-lg-4">
-    <div class="container bg-info text-white p-2 d-flex">
-        <h4>Users</h4>
-        <h5 class="">Add User</h5>
+  <div class="container bg-primary p-2">
+    <div class="text-white row">
+      <div class="col-2 py-1">Users</div>
+      <div class="col-4"></div>
+      <div class="col-2 py-1">
+        <a class="text-white">Add User</a>
+      </div>
+      <div class="col-4">
+        <input type="text" placeholder="Search" class="form-control" />
+      </div>
     </div>
-    <table class="table table-bordered table-hover table-responsive">
-        <thead class="table-primary">
-            <td>Name</td>
-            <td>Email</td>
-            <td>Mobile</td>
-            <td>Current Organisation</td>
-            <td>Action</td>
-        </thead>
-        <tbody>
-            <tr *ngFor='let u of usersList'>
-                <td>{{u.name}}</td>
-                <td>{{u.email}}</td>
-                <td>{{u.mobile}}</td>
-                <td>{{u.current_ogranisation}}</td>
-                <td class="text-center"><i (click)="edit(u.id)" class="fa fa-lg fa-edit text-info"></i> &nbsp; <i (click)="delete(u.id)" class="fa fa-lg fa-trash text-danger"></i></td>
-            </tr>
-        </tbody>
-    </table>
+  </div>
+
+  <table class="table table-bordered table-hover table-responsive">
+    <thead class="table-primary">
+      <td>Name</td>
+      <td>Email</td>
+      <td>Mobile</td>
+      <td>Current Organisation</td>
+      <td>Action</td>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of usersList">
+        <td>{{ u.name }}</td>
+        <td>{{ u.email }}</td>
+        <td>{{ u.mobile }}</td>
+        <td>{{ u.current_ogranisation }}</td>
+        <td class="text-center">
+          <i (click)="edit(u.id)" class="fa fa-lg fa-edit text-info"></i> &nbsp;
+          <i (click)="delete(u.id)" class="fa fa-lg fa-trash text-danger"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
