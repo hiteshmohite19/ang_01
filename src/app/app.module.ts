@@ -7,19 +7,23 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http'
 import {ApiServiceService} from './api-service.service';
 import {NavHeadingComponent} from './main-page/nav-heading/nav-heading.component'
-import {SideNavComponent} from './main-page/side-nav/side-nav.component'
+import {SideNavComponent} from './main-page/side-nav/side-nav.component';
+import { UsersListComponent } from './sidenav-links/users/users-list/users-list.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponent,
     NavHeadingComponent,
-    SideNavComponent, 
+    SideNavComponent,
+    UsersListComponent,
     ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     ApiServiceService,
