@@ -1,1 +1,98 @@
-<p>edi-user works!</p>
+<div class="container mt-3 border mb-2">
+    <div class="row bg-primary text-white">
+        <div class="col-2 mr-auto mt-2">
+            <h5>Add Users</h5>
+        </div>
+        <div class="col justify-content-end d-flex mt-2">
+            <div (click)="users()">
+                <i class="fa fa-list"></i> &nbsp;Users
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+      <form class="m-4" [formGroup]='userDetails'>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="">Name</label>
+                <input type="text" [class.is-invalid]="userGroup.name.invalid && userGroup.name.touched" class="form-control required" formControlName="name" required placeholder="Name">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="">Email</label>
+                <input type="email" [class.is-invalid]="userGroup.email.invalid && userGroup.email.touched" class="form-control required" formControlName="email" required placeholder="Email">
+              </div>
+            </div>
+          </div><br>
+
+          <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="">Mobile No.</label>
+                  <input type="text" [class.is-invalid]="userGroup.mobileno.invalid && userGroup.mobileno.touched" class="form-control required" maxlength="10" formControlName="mobileno" required placeholder="Mobile No">
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="">Age</label>
+                  <input type="text" class="form-control" maxlength="2" minlength="2" formControlName="age" placeholder="Age">
+                  <small class="text-danger" *ngIf="userGroup.age.errors?.minlength">Age must be 2 digit number </small>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="">Date of Birth</label>
+                  <input type="date" class="form-control date required" formControlName="dob" required placeholder="Date of Birth">
+                </div>
+              </div>
+            </div><br>
+
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="">Address</label>
+                  <textarea formControlName='address' class="form-control w-100" rows="4"></textarea> 
+                </div>
+              </div>
+            </div><br>
+
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="">Profession</label>
+                  <input type="text" [class.is-invalid]="userGroup.profession.invalid && userGroup.profession.touched" class="form-control required" formControlName="profession" required placeholder="Profession">
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="">Current Organisation</label>
+                  <input type="text" class="form-control" formControlName="current_organisation" placeholder="Current Organisation">
+                </div>
+              </div>
+            </div><br>
+
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="">Joining Date</label>
+                  <input type="date" class="form-control date" formControlName="jd" placeholder="Joining Date"> 
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="">Previous Organisation</label>
+                  <input type="text" class="form-control" formControlName="previous_organisation" placeholder="Previous Ogranisation">
+                </div>
+              </div>
+            </div><br>
+
+            <div class="row">
+                <div class="container">
+                    {{userDetails.status}}
+                    <button class="btn btn-success" [disabled]='!userDetails.valid' (click)="submit()">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

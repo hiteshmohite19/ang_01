@@ -12,7 +12,7 @@ const routes: Routes = [
     children:[
       {path:'',component:UsersListComponent},
       {path:'add-user',component:AddUserComponent},
-      {path:'edit-user',component:EdiUserComponent},
+      {path:'edit-user/:id',component:EdiUserComponent},
     ]
   }
 ];

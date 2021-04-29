@@ -21,12 +21,12 @@ export class UsersListComponent implements OnInit {
     );
   }
 
-  addUser(){
+  addUser(){  
     this._router.navigate(['add-user'],{relativeTo:this._activatedRoute})
   }
 
   edit(id:any){
-    alert(id)
+    this._router.navigate(['edit-user',id],{relativeTo:this._activatedRoute})
   }
 
   delete(id:any){
